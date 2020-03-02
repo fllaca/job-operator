@@ -1,0 +1,10 @@
+domain: joboperator.io
+repo: github.com/fllaca/job-operator
+resources:
+- group: batch
+  kind: JobTemplate
+  version: v1
+- group: batch
+  kind: JobRun
+  version: v1
+version: "2"

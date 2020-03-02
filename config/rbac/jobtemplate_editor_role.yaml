@@ -1,0 +1,26 @@
+# permissions to do edit jobtemplates.
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  name: jobtemplate-editor-role
+rules:
+- apiGroups:
+  - batch.joboperator.io
+  resources:
+  - jobtemplates
+  verbs:
+  - create
+  - delete
+  - get
+  - list
+  - patch
+  - update
+  - watch
+- apiGroups:
+  - batch.joboperator.io
+  resources:
+  - jobtemplates/status
+  verbs:
+  - get
+  - patch
+  - update

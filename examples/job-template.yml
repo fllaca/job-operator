@@ -1,0 +1,20 @@
+apiVersion: batch.joboperator.io/v1
+kind: JobTemplate
+metadata:
+  name: jobtemplate-sample
+spec:
+  jobTemplate:
+    spec:
+      template:
+        spec:
+          containers:
+          - name: hello
+            image: alpine:3.10
+            args:
+            - /bin/sh
+            - -c
+            - date; echo Hello $MESSAGE
+            env:
+              - name: MESSAGE
+                value: from the kubernetes cluster
+          restartPolicy: OnFailure

@@ -1,0 +1,7 @@
+apiVersion: batch.joboperator.io/v1
+kind: JobRun
+metadata:
+  name: jobrun-sample
+spec:
+  # Add fields here
+  foo: bar

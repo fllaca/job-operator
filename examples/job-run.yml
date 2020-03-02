@@ -1,0 +1,13 @@
+apiVersion: batch.joboperator.io/v1
+kind: JobRun
+metadata:
+  name: jobrun-sample
+  namespace: default
+spec:
+  jobTemplate: jobtemplate-sample
+  overrides:
+    containers:
+      - name: hello
+        env:
+          - name: MESSAGE
+            value: WORLD

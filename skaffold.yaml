@@ -1,0 +1,15 @@
+apiVersion: skaffold/v2alpha3
+kind: Config
+build:
+  artifacts:
+    - image: controller
+  local:
+    useBuildkit: true
+deploy:
+  kustomize:
+    paths:
+      - config/default
+      - config/crd
+      - config/manager
+      - config/rbac
+
